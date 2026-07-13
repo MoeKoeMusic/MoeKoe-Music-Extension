@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "MoeKoe Music",
+  "version": "0.1.0",
+  "description": "MoeKoe Music browser extension build.",
+  "action": {
+    "default_title": "Open MoeKoe Music"
+  },
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "icons": {
+    "128": "icons/logo.png"
+  }
+}
+
