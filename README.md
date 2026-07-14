@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="MoeKoeMusic/build/icons/linux/256x256.png" width="180" alt="MoeKoe Music" />
+  <img src="https://github.com/MoeKoeMusic/MoeKoeMusic/raw/main/build/icons/linux/256x256.png" width="180" alt="MoeKoe Music" />
 
 # MoeKoe Music Extension
 
@@ -125,4 +125,4 @@ npm run build
 
 ## License
 
-本项目沿用上游 MoeKoeMusic 的开源协议，详见 [MoeKoeMusic/LICENSE](MoeKoeMusic/LICENSE)。
+本项目沿用上游 MoeKoeMusic 的开源协议，详见 [MoeKoeMusic/LICENSE](https://github.com/MoeKoeMusic/MoeKoeMusic/blob/main/LICENSE)。
