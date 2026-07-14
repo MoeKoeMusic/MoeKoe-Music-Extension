@@ -28,12 +28,18 @@ function run(command, args, options = {}) {
   });
 }
 
-async function copyFileIfExists(source, target) {
-  try {
-    await fs.mkdir(path.dirname(target), { recursive: true });
-    await fs.copyFile(source, target);
-  } catch (error) {
-    if (error.code !== 'ENOENT') throw error;
+async function copyExtensionIcons() {
+  const iconSourceDir = path.join(rootDir, 'MoeKoeMusic', 'build', 'icons', 'linux');
+  const iconTargetDir = path.join(distDir, 'icons');
+  const iconSizes = [16, 32, 48, 128];
+
+  await fs.mkdir(iconTargetDir, { recursive: true });
+
+  for (const size of iconSizes) {
+    await fs.copyFile(
+      path.join(iconSourceDir, `${size}x${size}.png`),
+      path.join(iconTargetDir, `${size}.png`)
+    );
   }
 }
 
@@ -74,10 +80,7 @@ async function main() {
 
   await fs.copyFile(path.join(rootDir, 'extension', 'manifest.json'), path.join(distDir, 'manifest.json'));
   await fs.copyFile(path.join(rootDir, 'extension', 'app', 'locale-init.js'), path.join(appDistDir, 'locale-init.js'));
-  await copyFileIfExists(
-    path.join(rootDir, 'MoeKoeMusic', 'public', 'assets', 'images', 'logo.png'),
-    path.join(distDir, 'icons', 'logo.png')
-  );
+  await copyExtensionIcons();
 
   console.log(`extension build complete: ${path.relative(rootDir, distDir)}`);
 }
