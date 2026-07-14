@@ -58,7 +58,7 @@ dist/extension
 
 ## API 运行方式
 
-这个项目不会让用户填写 API 地址。MoeKoeMusic 前端仍然按照自己的 HTTP 路由发起请求，构建时会把 Axios 请求适配到扩展内部消息通道。
+相较于 MoeKoe Music Web版本,该插件版不会让用户填写 API 地址。MoeKoeMusic 前端仍然按照自己的 HTTP 路由发起请求，构建时会把 Axios 请求适配到扩展内部消息通道。
 
 请求流程如下：
 
